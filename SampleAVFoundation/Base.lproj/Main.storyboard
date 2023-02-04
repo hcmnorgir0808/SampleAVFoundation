@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,15 +13,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleAVFoundation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SzE-bA-zcZ">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="huX-mp-6Et">
+                                <rect key="frame" x="100" y="95" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="38v-50-BiJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="Tmf-bb-BUW"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpi-8x-XqF">
-                                <rect key="frame" x="170.66666666666666" y="404.66666666666669" width="48.666666666666657" height="35"/>
+                                <rect key="frame" x="397.66666666666669" y="177.66666666666666" width="48.666666666666686" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="tap">
                                     <backgroundConfiguration key="background">
@@ -29,31 +36,35 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="tappedTakePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nRK-hk-STP"/>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lUo-ff-8CH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ky-5R-48j">
-                                <rect key="frame" x="249.33333333333331" y="404.66666666666669" width="80.333333333333314" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="change"/>
-                                <connections>
-                                    <action selector="changeOutputPosition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTl-wM-5iX"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-cH-Tr0">
+                                <rect key="frame" x="644" y="0.0" width="200" height="390"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.26379683613777161" blue="0.26379683613777161" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="qh2-dn-9sp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SzE-bA-zcZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1jt-dx-VVH"/>
+                            <constraint firstAttribute="bottom" secondItem="Pkh-cH-Tr0" secondAttribute="bottom" id="2Ot-Q6-pRa"/>
                             <constraint firstItem="rpi-8x-XqF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="68i-Cs-I6Q"/>
                             <constraint firstItem="rpi-8x-XqF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jlm-sU-Hih"/>
+                            <constraint firstItem="huX-mp-6Et" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="KHM-0A-fUb"/>
                             <constraint firstAttribute="bottom" secondItem="SzE-bA-zcZ" secondAttribute="bottom" id="Kcm-QB-Kmu"/>
+                            <constraint firstItem="huX-mp-6Et" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M0h-Ut-mAa"/>
                             <constraint firstAttribute="trailing" secondItem="SzE-bA-zcZ" secondAttribute="trailing" id="QNi-Xp-BwE"/>
                             <constraint firstItem="SzE-bA-zcZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bSO-VZ-cpz"/>
+                            <constraint firstItem="Pkh-cH-Tr0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="opE-QI-Brf"/>
+                            <constraint firstAttribute="trailing" secondItem="Pkh-cH-Tr0" secondAttribute="trailing" id="pTR-SP-QBq"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="huX-mp-6Et" id="0FO-jj-Q7H"/>
                         <outlet property="previewView" destination="SzE-bA-zcZ" id="ffw-Ax-2lc"/>
                     </connections>
                 </viewController>
@@ -65,9 +76,6 @@
     <resources>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
